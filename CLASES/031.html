@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>42. Forma rápida de prevenir comportamientos por defecto</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Evento DOM listo</h1>
+    <p>
+      Normalmente, desearemos manipular el DOM (Document Object Model), cuando la página este lista y completamente creada.
+    </p>
+
+
+    <a href="http://google.com">Ir a google</a>
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      // $("a").on('click', function ( e ){
+      //   e.preventDefault();
+      // });
+
+      //forma mas corta
+
+      // $("a").on('click', function ( e ){
+      //   return false;
+      // });
+
+      $("a").on('click', false);
+
+      // $("a").click(false);
+
+    </script>
+
+  </body>
+</html>

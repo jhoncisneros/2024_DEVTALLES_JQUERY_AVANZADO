@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>24. Manipulaciones del DOM al mínimo</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Evento DOM listo</h1>
+    <p>
+      Normalmente, desearemos manipular el DOM (Document Object Model), cuando la página este lista y completamente creada.
+    </p>
+
+
+      <div id="elem"></div>
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      var inicio = new Date();
+
+      // var $elem = $("#elem");
+      // for( var i=0; i<=1000; i++ ){
+      //   $elem.append('<li>Elemento ' + i + '</li>');
+      // }
+
+      var $elem = $("#elem"),
+          arr = [];
+      for( var i=0; i<=1000; i++){
+        arr.push('<li>Elemento ' + i + '</li>');
+      }
+      $elem.append( arr.join('') );
+
+      var fin = new Date();
+
+      //resultados
+      console.log("inicio: ", inicio.getTime());
+      console.log("fin: ", fin.getTime());
+      console.log("Diff: ", fin.getTime() - inicio.getTime());
+
+    </script>
+
+  </body>
+</html>

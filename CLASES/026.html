@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>37. Escuchar eventos de elementos que aún no existen</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Evento DOM listo</h1>
+    <p>
+      Normalmente, desearemos manipular el DOM (Document Object Model), cuando la página este lista y completamente creada.
+    </p>
+
+
+    <ul id="lista">
+      <li>Viejo item</li>
+      <li>Viejo item</li>
+      <li>Viejo item</li>
+      <li>Viejo item</li>
+      <li>Viejo item</li>
+      <li>Viejo item</li>
+      <li>Viejo item</li>
+    </ul>
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      var lista = $("#lista");
+      var contador = 0;
+
+      // $("li").on('click', function(){
+      //
+      //   contador++;
+      //
+      //   $(this).remove();
+      //
+      //   lista.append('<li>Nuevo Item ' + contador + '</li>');
+      // });
+
+      //escuchar eventos que aun no existen
+      lista.on('click', 'li', function(){
+          contador++;
+
+          $(this).remove();
+
+          lista.append('<li>Nuevo Item ' + contador + '</li>');
+      });
+
+    </script>
+
+  </body>
+</html>

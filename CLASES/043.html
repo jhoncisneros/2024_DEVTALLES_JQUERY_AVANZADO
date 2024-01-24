@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>57. Obtener el ultimo post de Tumblr de un blog</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Evento DOM listo</h1>
+    <p>
+      Normalmente, desearemos manipular el DOM (Document Object Model), cuando la página este lista y completamente creada.
+    </p>
+
+
+    <div id="post"></div>
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      var blog = 'urlgold.tumblr.com',
+          post = $("#post"),
+          api = 'http://' + blog + '/api/read/json?callback=?';
+
+      $.getJSON(api, function ( r ){
+
+        console.log( r );
+
+        console.log("Titulo", r.tumblelog.title );
+        console.log("Titulo", r.tumblelog.description );
+        console.log(r.posts[0].tumblelog.avatar_url_512);
+
+        if( r.posts[0].tumblelog.avatar_url_512){
+          post.append('<img src="' + r.posts[0].tumblelog.avatar_url_512 + '"/>');
+        }
+
+      });
+
+    </script>
+
+  </body>
+</html>

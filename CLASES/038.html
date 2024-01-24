@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>52. Cargar archivos externos y desplegarlos en nuestra página</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Evento DOM listo</h1>
+    <p>
+      Normalmente, desearemos manipular el DOM (Document Object Model), cuando la página este lista y completamente creada.
+    </p>
+
+
+      <p id="parrafo1"></p>
+      <p id="parrafo2"></p>
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      var par1 = $("#parrafo1"),
+          par2 = $("#parrafo2");
+
+      par1.load('assets/data/1.txt');
+
+      par2.load('assets/data/1.html #header');
+      // par2.load('assets/data/1.html .lo-que-sea');
+
+    </script>
+
+  </body>
+</html>

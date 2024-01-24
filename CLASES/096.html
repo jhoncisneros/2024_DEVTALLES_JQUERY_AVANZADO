@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>113. Tomar una fotografia con la camara</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Evento DOM listo</h1>
+    <p>
+      Normalmente, desearemos manipular el DOM (Document Object Model), cuando la página este lista y completamente creada.
+    </p>
+
+
+    <div id="my_camera"></div>
+
+    <button type="button" class="btn btn-outline-primary">
+      Tomar foto
+    </button>
+
+    <div id="resultados"></div>
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script src="assets/libs/webcam.min.js" charset="utf-8"></script>
+    <script>
+
+      Webcam.set({
+        width: 320,
+        height: 240,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+      });
+
+      Webcam.attach( '#my_camera' );
+
+      $('button').click(function(){
+
+        Webcam.snap( function(data_uri) {
+          // document.getElementById('results').innerHTML =
+          //         '<h2>Here is your image:</h2>' +
+          //         '<img src="'+data_uri+'"/>';
+
+          $('#resultados').html('<h2>Here is your image:</h2>' +
+                                '<img src="'+data_uri+'"/>');
+          console.log(data_uri);
+        } );
+
+      });
+
+    </script>
+
+  </body>
+</html>

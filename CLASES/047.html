@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>62. Aprende a querer la consola</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Evento DOM listo</h1>
+    <p>
+      Normalmente, desearemos manipular el DOM (Document Object Model), cuando la página este lista y completamente creada.
+    </p>
+
+
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      console.log("Hola de nuevo");
+
+      var a = 'buenos', b = 'dias';
+      console.log(" Hola, %s %s.", a , b);
+
+      console.dir( window );
+
+      console.info('Informacion');
+      console.warn('Alerta');
+      console.error('oops, algo malo paso');
+
+      for( var i=0; i<10; i++){
+        console.count('vamos por');
+      }
+
+      console.group('Function main');
+      console.log('vamos en camino');
+      console.info('en camino');
+      console.warn('estamoos llegando');
+      console.error('chocamos');
+      console.groupEnd();
+
+
+      console.time('Medir el tiempo de este ciclo');
+      var numero =0;
+      for (var i=0; i< 100000; i++){
+        numero+=10;
+      }
+      console.timeEnd('Medir el tiempo de este ciclo');
+
+
+    </script>
+
+  </body>
+</html>

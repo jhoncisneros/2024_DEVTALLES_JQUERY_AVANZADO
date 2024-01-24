@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>107. Colocar mascaras en los inputs</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Evento DOM listo</h1>
+    <p>
+      Normalmente, desearemos manipular el DOM (Document Object Model), cuando la página este lista y completamente creada.
+    </p>
+
+
+    <label>Fecha</label>
+    <input type="text" id="fecha" class="form-control">
+    <br>
+
+    <label>Telefono</label>
+    <input type="text" id="tel" class="form-control">
+    <br>
+
+    <label>Cedula</label>
+    <input type="text" id="ced" class="form-control">
+    <br>
+
+    <label>Color</label>
+    <input type="text" id="color" class="form-control">
+    <br>
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js" charset="utf-8"></script>
+    <script>
+
+      $('#fecha').mask('99/99/9999');
+      $('#tel').mask('+(999) 999-9999');
+      $('#ced').mask('9-9999-99999-9');
+
+      $.mask.definitions['h'] = "[A-Fa-f0-9]";
+
+      $('#color').mask('#hhhhhh');
+
+    </script>
+
+  </body>
+</html>

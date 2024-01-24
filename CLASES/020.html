@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>28. Definir funciones repetidas una única vez</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Evento DOM listo</h1>
+    <p>
+      Normalmente, desearemos manipular el DOM (Document Object Model), cuando la página este lista y completamente creada.
+    </p>
+
+
+    <button type="button" id="menuBtn" class="btn btn-outline-primary">
+      Mostrar menu
+    </button>
+
+    <br><br>
+
+    <a href="#" id="menuLink">
+      Mostrar menu link
+    </a>
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      //crea 2 eventos que hacen lo mismo
+      //requiere un poco mas de memoria
+      // $("#menuBtn, #menuLink").on('click', function(){
+      //   console.log('mostrando menu');
+      // });
+
+      // $("#menuLink").on('click', function(){
+      //   console.log('mostrando menu')
+      // });
+
+      //otra forma mas simple que ocupa poco espacio de memoria
+
+      function mostrarMenu(){
+        console.log("mostrando menu - funcion");
+      }
+
+      $("#menuBtn, #menuLink").on('click', mostrarMenu);
+
+      //.click es muy posible que a fututo deje de existir
+      // $("#menuBtn, #menuLink").click( mostrarMenu);
+
+    </script>
+
+  </body>
+</html>

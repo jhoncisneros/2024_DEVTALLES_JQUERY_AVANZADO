@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>104. Tranajando con dinero y monedas</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Evento DOM listo</h1>
+    <p>
+      Normalmente, desearemos manipular el DOM (Document Object Model), cuando la página este lista y completamente creada.
+    </p>
+
+<!--    2f30da33c0cb4e8e8fb74a340b003149-->
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script src="assets/libs/money.min.js" charset="utf-8"></script>
+
+    <script>
+
+      // $.getJSON('assets/data/rates.json');
+      $.getJSON('https://openexchangerates.org/api/latest.json?app_id=2f30da33c0cb4e8e8fb74a340b003149', function( data ){
+
+        console.log(data);
+
+        fx.rates = data.rates;
+        fx.base = data.base;
+
+        console.log('100 USD a EUR', fx(100).from('USD').to('EUR').toFixed(2) );
+        console.log('1 USD a Colones', fx(1).from('USD').to('CRC').toFixed(2) );
+        console.log('1 USD a Soles', fx(1).from('USD').to('PEN').toFixed(2) );
+
+      });
+
+
+
+    </script>
+
+  </body>
+</html>

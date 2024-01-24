@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>69. Ordenar elementos dentro de una colección de jQuery</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Evento DOM listo</h1>
+    <p>
+      Normalmente, desearemos manipular el DOM (Document Object Model), cuando la página este lista y completamente creada.
+    </p>
+
+    <button type="button">Ordenar</button>
+
+    <ul id="numeros">
+      <li>100</li>
+      <li>2</li>
+      <li>5</li>
+      <li>9</li>
+      <li>40</li>
+      <li>50</li>
+      <li>1</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      $('button').on('click', function(){
+
+        var numeros = $("#numeros li");
+        numeros.sort( function( a, b ){
+
+          // console.log( parseInt(a.textContent), parseInt(b.textContent));
+          // return false;
+          return parseInt(a.textContent) > parseInt(b.textContent);
+        }).appendTo( numeros.parent());
+
+        console.log( numeros );
+
+      });
+
+    </script>
+
+  </body>
+</html>

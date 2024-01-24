@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>54. Subida de archivos binarios via Ajax</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Evento DOM listo</h1>
+    <p>
+      Normalmente, desearemos manipular el DOM (Document Object Model), cuando la página este lista y completamente creada.
+    </p>
+
+
+    <input type="file" id="inputSubir">
+    <button type="button" id="btnSubir">Subir archivo</button>
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      var fileInput = $("#inputSubir"),
+              boton = $("#btnSubir");
+
+      boton.on('click', function (){
+
+        var archivos = fileInput.prop('files');
+
+        if( archivos.length === 0 ){
+          console.log("Por favor selecciona algún archivo");
+          return;
+        }
+
+        var fd = new FormData();
+
+        fd.append('file', archivos[0]);
+
+        $.ajax({
+          url: 'xxxxx/upload.php',
+          data: fd,
+          contentType: false,
+          processData: false,
+          type: 'POST',
+          success: function( r ){
+            console.log( r );
+          }
+        });
+
+      });
+
+    </script>
+
+  </body>
+</html>

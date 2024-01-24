@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>50. Ejecutar multiples peticiones ajax en paralelo</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Evento DOM listo</h1>
+    <p>
+      Normalmente, desearemos manipular el DOM (Document Object Model), cuando la página este lista y completamente creada.
+    </p>
+
+
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+    $.when( $.get('assets/data/1.json'), $.get('assets/data/2.json') )
+     .then( function( r1, r2 ){
+
+       r1 = r1[0];
+       r2 = r2[0];
+
+       var mensaje = r1.mensaje + " " + r2.nombre + " " + r2.edad;
+       console.log(mensaje);
+
+     } ).catch(function(err){
+      console.log("error!!!");
+    });
+
+    </script>
+
+  </body>
+</html>
